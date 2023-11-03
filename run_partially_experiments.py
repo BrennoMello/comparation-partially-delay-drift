@@ -43,8 +43,8 @@ def run_abrupt_agraw1(repetitions, learning_algorithms, drift_detectors_params, 
                                         -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_agraw1/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW1_Abrupt.csv'
                                              
                     
-                            log.info(command)
-                            os.system(command)
+                        log.info(command)
+                        os.system(command)
 
 def run_gradual_agraw1(repetitions, learning_algorithms, drift_detectors_params, data_stream):
 
@@ -87,8 +87,8 @@ def run_gradual_agraw1(repetitions, learning_algorithms, drift_detectors_params,
                                         -p {size["drift_position"][1]} -w 500) \
                                         -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_agraw1/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW1_Gradual.csv'           
                         
-                            log.info(command)
-                            os.system(command)
+                        log.info(command)
+                        os.system(command)
 
 
 def run_abrupt_agraw2(repetitions, learning_algorithms, drift_detectors_params, data_stream):
