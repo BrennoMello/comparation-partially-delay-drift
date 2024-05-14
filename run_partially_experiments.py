@@ -20,7 +20,7 @@ def run_abrupt_agraw1(repetitions, learning_algorithms, drift_detectors_params, 
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_agraw1/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW1_Abrupt.csv'
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/partially/abrupt_agraw1/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW1_Abrupt.csv'
                             else:
                                 command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d ({drift_algorithm["drift_name"]} {drift_algorithm["params"]})) \
                                             -s (ConceptDriftStream -s (generators.AgrawalGenerator -i {iter}) -d (ConceptDriftStream \
@@ -30,7 +30,7 @@ def run_abrupt_agraw1(repetitions, learning_algorithms, drift_detectors_params, 
                                             -p {size["drift_position"][3]} -w 1) \
                                             -p {size["drift_position"][2]} -w 1) \
                                             -p {size["drift_position"][1]} -w 1) \
-                                            -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_agraw1/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW1_Abrupt.csv'
+                                            -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/partially/abrupt_agraw1/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW1_Abrupt.csv'
                         else:
                             command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d {drift_algorithm["drift_name"]}) \
                                         -s (ConceptDriftStream -s (generators.AgrawalGenerator -i {iter}) -d (ConceptDriftStream \
@@ -40,7 +40,7 @@ def run_abrupt_agraw1(repetitions, learning_algorithms, drift_detectors_params, 
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_agraw1/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW1_Abrupt.csv'
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_agraw1/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW1_Abrupt.csv'
                                              
                     
                         log.info(command)
@@ -64,7 +64,7 @@ def run_gradual_agraw1(repetitions, learning_algorithms, drift_detectors_params,
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_agraw1/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW1_Gradual.csv'
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_agraw1/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW1_Gradual.csv'
                                 
                             else:        
                                 command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d ({drift_algorithm["drift_name"]} {drift_algorithm["params"]})) \
@@ -75,7 +75,7 @@ def run_gradual_agraw1(repetitions, learning_algorithms, drift_detectors_params,
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_agraw1/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW1_Gradual.csv'
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_agraw1/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW1_Gradual.csv'
                         else:
                             command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d {drift_algorithm["drift_name"]}) \
                                         -s (ConceptDriftStream -s (generators.AgrawalGenerator -i {iter}) -d (ConceptDriftStream \
@@ -85,7 +85,7 @@ def run_gradual_agraw1(repetitions, learning_algorithms, drift_detectors_params,
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_agraw1/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW1_Gradual.csv'           
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_agraw1/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW1_Gradual.csv'           
                         
                         log.info(command)
                         os.system(command)
@@ -109,7 +109,7 @@ def run_abrupt_agraw2(repetitions, learning_algorithms, drift_detectors_params, 
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_agraw2/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW2_Abrupt.csv'
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_agraw2/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW2_Abrupt.csv'
                             
                             else:    
                                 command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d ({drift_algorithm["drift_name"]} {drift_algorithm["params"]})) \
@@ -120,7 +120,7 @@ def run_abrupt_agraw2(repetitions, learning_algorithms, drift_detectors_params, 
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_agraw2/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW2_Abrupt.csv'
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_agraw2/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW2_Abrupt.csv'
                         else:
                             command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d {drift_algorithm["drift_name"]}) \
                                         -s (ConceptDriftStream -s (generators.AgrawalGenerator -i {iter} -f 6) -d (ConceptDriftStream \
@@ -130,7 +130,7 @@ def run_abrupt_agraw2(repetitions, learning_algorithms, drift_detectors_params, 
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_agraw2/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW2_Abrupt.csv'
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_agraw2/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW2_Abrupt.csv'
                                 
                         log.info(command)
                         os.system(command)
@@ -153,7 +153,7 @@ def run_gradual_agraw2(repetitions, learning_algorithms, drift_detectors_params,
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_agraw2/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW2_Gradual.csv'
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_agraw2/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW2_Gradual.csv'
                             else:
                                 command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d ({drift_algorithm["drift_name"]} {drift_algorithm["params"]})) \
                                         -s (ConceptDriftStream -s (generators.AgrawalGenerator -i {iter} -f 6) -d (ConceptDriftStream \
@@ -163,7 +163,7 @@ def run_gradual_agraw2(repetitions, learning_algorithms, drift_detectors_params,
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_agraw2/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW2_Gradual.csv'    
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_agraw2/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW2_Gradual.csv'    
                         else:
                             command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d {drift_algorithm["drift_name"]}) \
                                         -s (ConceptDriftStream -s (generators.AgrawalGenerator -i {iter} -f 6) -d (ConceptDriftStream \
@@ -173,7 +173,7 @@ def run_gradual_agraw2(repetitions, learning_algorithms, drift_detectors_params,
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_agraw2/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW2_Gradual.csv'
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_agraw2/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_AGRAW2_Gradual.csv'
                                 
                         log.info(command)
                         os.system(command)
@@ -196,7 +196,7 @@ def run_abrupt_led(repetitions, learning_algorithms, drift_detectors_params, dat
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_led/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_LED_Abrupt.csv'  
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_led/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_LED_Abrupt.csv'  
                             else:     
                                 command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d ({drift_algorithm["drift_name"]} {drift_algorithm["params"]})) \
                                         -s (ConceptDriftStream -s (generators.LEDGeneratorDrift -i {iter}) -d (ConceptDriftStream \
@@ -206,7 +206,7 @@ def run_abrupt_led(repetitions, learning_algorithms, drift_detectors_params, dat
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_led/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_LED_Abrupt.csv'        
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_led/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_LED_Abrupt.csv'        
                         else:
                             command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d {drift_algorithm["drift_name"]}) \
                                         -s (ConceptDriftStream -s (generators.LEDGeneratorDrift -i {iter} -d 7) -d (ConceptDriftStream \
@@ -216,7 +216,7 @@ def run_abrupt_led(repetitions, learning_algorithms, drift_detectors_params, dat
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_led/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_LED_Abrupt.csv'
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_led/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_LED_Abrupt.csv'
                                 
                         log.info(command)
                         os.system(command)
@@ -239,7 +239,7 @@ def run_gradual_led(repetitions, learning_algorithms, drift_detectors_params, da
                                             -p {size["drift_position"][3]} -w 500) \
                                             -p {size["drift_position"][2]} -w 500) \
                                             -p {size["drift_position"][1]} -w 500) \
-                                            -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_led/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_LED_Gradual.csv'    
+                                            -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_led/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_LED_Gradual.csv'    
                             else: 
                                 command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d ({drift_algorithm["drift_name"]} {drift_algorithm["params"]})) \
                                             -s (ConceptDriftStream -s (generators.LEDGeneratorDrift -i {iter} -d 7) -d (ConceptDriftStream \
@@ -249,7 +249,7 @@ def run_gradual_led(repetitions, learning_algorithms, drift_detectors_params, da
                                             -p {size["drift_position"][3]} -w 500) \
                                             -p {size["drift_position"][2]} -w 500) \
                                             -p {size["drift_position"][1]} -w 500) \
-                                            -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_led/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_LED_Gradual.csv'                     
+                                            -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_led/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_LED_Gradual.csv'                     
                         else:
                             command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d {drift_algorithm["drift_name"]}) \
                                         -s (ConceptDriftStream -s (generators.LEDGeneratorDrift -i {iter} -d 7) -d (ConceptDriftStream \
@@ -259,7 +259,7 @@ def run_gradual_led(repetitions, learning_algorithms, drift_detectors_params, da
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_led/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_LED_Gradual.csv'
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_led/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_LED_Gradual.csv'
                                 
                         log.info(command)
                         os.system(command)
@@ -282,7 +282,7 @@ def run_abrupt_mixed(repetitions, learning_algorithms, drift_detectors_params, d
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_mixed/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_MIXED_Abrupt.csv'
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_mixed/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_MIXED_Abrupt.csv'
                             
                             else:
                                 command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d ({drift_algorithm["drift_name"]} {drift_algorithm["params"]})) \
@@ -293,7 +293,7 @@ def run_abrupt_mixed(repetitions, learning_algorithms, drift_detectors_params, d
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_mixed/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_MIXED_Abrupt.csv'
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_mixed/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_MIXED_Abrupt.csv'
                         
                         else:
                             command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d {drift_algorithm["drift_name"]}) \
@@ -304,7 +304,7 @@ def run_abrupt_mixed(repetitions, learning_algorithms, drift_detectors_params, d
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_mixed/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_MIXED_Abrupt.csv'                                
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_mixed/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_MIXED_Abrupt.csv'                                
                     
                         log.info(command)
                         os.system(command)
@@ -327,7 +327,7 @@ def run_gradual_mixed(repetitions, learning_algorithms, drift_detectors_params, 
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_mixed/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_MIXED_Gradual.csv'
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_mixed/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_MIXED_Gradual.csv'
                             
                             else:
                                 command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d ({drift_algorithm["drift_name"]} {drift_algorithm["params"]})) \
@@ -338,7 +338,7 @@ def run_gradual_mixed(repetitions, learning_algorithms, drift_detectors_params, 
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_mixed/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_MIXED_Gradual.csv'
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_mixed/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_MIXED_Gradual.csv'
                                 
                         else:
                             command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d {drift_algorithm["drift_name"]}) \
@@ -349,7 +349,7 @@ def run_gradual_mixed(repetitions, learning_algorithms, drift_detectors_params, 
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_mixed/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_MIXED_Gradual.csv'            
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_mixed/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_MIXED_Gradual.csv'            
                         
                         log.info(command)
                         os.system(command)
@@ -371,7 +371,7 @@ def run_abrupt_randomRBF(repetitions, learning_algorithms, drift_detectors_param
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_randomRBF/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_RANDOM_RBF_Abrupt.csv'
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_randomRBF/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_RANDOM_RBF_Abrupt.csv'
                                 
                             else:
                                 command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d ({drift_algorithm["drift_name"]} {drift_algorithm["params"]})) \
@@ -382,7 +382,7 @@ def run_abrupt_randomRBF(repetitions, learning_algorithms, drift_detectors_param
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_randomRBF/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_RANDOM_RBF_Abrupt.csv'
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_randomRBF/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_RANDOM_RBF_Abrupt.csv'
                         
                         else:
                             command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d {drift_algorithm["drift_name"]}) \
@@ -393,7 +393,7 @@ def run_abrupt_randomRBF(repetitions, learning_algorithms, drift_detectors_param
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_randomRBF/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_RANDOM_RBF_Abrupt.csv'       
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_randomRBF/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_RANDOM_RBF_Abrupt.csv'       
                         
                         log.info(command)
                         os.system(command)
@@ -415,7 +415,7 @@ def run_gradual_randomRBF(repetitions, learning_algorithms, drift_detectors_para
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_randomRBF/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_RANDOM_RBF_Gradual.csv'
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_randomRBF/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_RANDOM_RBF_Gradual.csv'
                             else:
                                 command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d ({drift_algorithm["drift_name"]} {drift_algorithm["params"]})) \
                                         -s (ConceptDriftStream -s (generators.RandomRBFGeneratorDrift -i {iter} -c 6 -a 40 -n 50 -r 1) -d (ConceptDriftStream \
@@ -425,7 +425,7 @@ def run_gradual_randomRBF(repetitions, learning_algorithms, drift_detectors_para
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_randomRBF/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_RANDOM_RBF_Gradual.csv'
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_randomRBF/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_RANDOM_RBF_Gradual.csv'
                         
                         else:
                             command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d {drift_algorithm["drift_name"]}) \
@@ -436,7 +436,7 @@ def run_gradual_randomRBF(repetitions, learning_algorithms, drift_detectors_para
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_randomRBF/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_RANDOM_RBF_Gradual.csv'
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_randomRBF/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_RANDOM_RBF_Gradual.csv'
                                                             
                         log.info(command)
                         os.system(command)
@@ -459,7 +459,7 @@ def run_abrupt_sine(repetitions, learning_algorithms, drift_detectors_params, da
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_sine/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_SINE_Abrupt.csv'
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_sine/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_SINE_Abrupt.csv'
                             else:    
                                 command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d ({drift_algorithm["drift_name"]} {drift_algorithm["params"]})) \
                                         -s (ConceptDriftStream -s (generators.SineGenerator -i {iter}) -d (ConceptDriftStream \
@@ -469,7 +469,7 @@ def run_abrupt_sine(repetitions, learning_algorithms, drift_detectors_params, da
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_sine/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_SINE_Abrupt.csv'
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_sine/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_SINE_Abrupt.csv'
                         
                         else:
                             command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d {drift_algorithm["drift_name"]}) \
@@ -480,7 +480,7 @@ def run_abrupt_sine(repetitions, learning_algorithms, drift_detectors_params, da
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_sine/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_SINE_Abrupt.csv'        
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_sine/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_SINE_Abrupt.csv'        
                         
                         log.info(command)
                         os.system(command)
@@ -503,7 +503,7 @@ def run_gradual_sine(repetitions, learning_algorithms, drift_detectors_params, d
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_sine/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_SINE_Gradual.csv'
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_sine/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_SINE_Gradual.csv'
                             
                             else:    
                                 command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d ({drift_algorithm["drift_name"]} {drift_algorithm["params"]})) \
@@ -514,7 +514,7 @@ def run_gradual_sine(repetitions, learning_algorithms, drift_detectors_params, d
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_sine/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_SINE_Gradual.csv'
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_sine/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_SINE_Gradual.csv'
                         
                         else:
                             command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d {drift_algorithm["drift_name"]}) \
@@ -525,7 +525,7 @@ def run_gradual_sine(repetitions, learning_algorithms, drift_detectors_params, d
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_sine/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_SINE_Gradual.csv'
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_sine/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_SINE_Gradual.csv'
                         
                         log.info(command)
                         os.system(command)
@@ -547,7 +547,7 @@ def run_abrupt_waveform(repetitions, learning_algorithms, drift_detectors_params
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_waveform/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_WAVEFORM_Abrupt.csv'
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_waveform/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_WAVEFORM_Abrupt.csv'
                                 
                             else:
                                 command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d ({drift_algorithm["drift_name"]} {drift_algorithm["params"]})) \
@@ -558,7 +558,7 @@ def run_abrupt_waveform(repetitions, learning_algorithms, drift_detectors_params
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_waveform/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_WAVEFORM_Abrupt.csv'
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_waveform/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_WAVEFORM_Abrupt.csv'
                         
                         else:
                             command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d {drift_algorithm["drift_name"]}) \
@@ -569,7 +569,7 @@ def run_abrupt_waveform(repetitions, learning_algorithms, drift_detectors_params
                                         -p {size["drift_position"][3]} -w 1) \
                                         -p {size["drift_position"][2]} -w 1) \
                                         -p {size["drift_position"][1]} -w 1) \
-                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/abrupt_waveform/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_WAVEFORM_Abrupt.csv'                
+                                        -p {size["drift_position"][0]} -w 1) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/abrupt_waveform/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_WAVEFORM_Abrupt.csv'                
                         
                         log.info(command)
                         os.system(command)
@@ -592,7 +592,7 @@ def run_gradual_waveform(repetitions, learning_algorithms, drift_detectors_param
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_waveform/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_WAVEFORM_Gradual.csv'
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_waveform/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_WAVEFORM_Gradual.csv'
                                 
                             else:
                                 command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d ({drift_algorithm["drift_name"]} {drift_algorithm["params"]})) \
@@ -603,7 +603,7 @@ def run_gradual_waveform(repetitions, learning_algorithms, drift_detectors_param
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_waveform/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_WAVEFORM_Gradual.csv'
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_waveform/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_WAVEFORM_Gradual.csv'
                         
                         else:
                             command = f'java -cp moa/src/moa-2023.04.0-sources.jar -javaagent:moa/lib/sizeofag-1.0.4.jar -classpath "moa/lib/*" moa.DoTask "EvaluatePrequentialPartiallyLabeledClassifierConcepDrift -l (moa.classifiers.drift.DetectionConceptDriftMethodClassifier -l {learning_algorithm} -d {drift_algorithm["drift_name"]}) \
@@ -614,7 +614,7 @@ def run_gradual_waveform(repetitions, learning_algorithms, drift_detectors_param
                                         -p {size["drift_position"][3]} -w 500) \
                                         -p {size["drift_position"][2]} -w 500) \
                                         -p {size["drift_position"][1]} -w 500) \
-                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/gradual_waveform/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_WAVEFORM_Gradual.csv'
+                                        -p {size["drift_position"][0]} -w 500) -e (BasicPartiallyLabeledConceptDriftPerformanceEvaluator) -i {size["data_size"]} -f 1000 -p {data_partially} -z {iter}" > results/partially/gradual_waveform/{learning_algorithm}_{drift_algorithm["id"]}_{size["data_size"]}_{data_partially}_{iter}_WAVEFORM_Gradual.csv'
                         
                         log.info(command)
                         os.system(command)
@@ -669,7 +669,7 @@ def run_experiment(repetitions):
     #run_gradual_agraw1(repetitions, learning_algorithms, drift_detectors_params, data_stream)
     #log.info(f'Runnig abrupt_agraw2')
     #run_abrupt_agraw2(repetitions, learning_algorithms, drift_detectors_params, data_stream)
-    log.info(f'Runnig gradual_agraw2')
+    log.info('Runnig gradual_agraw2')
     run_gradual_agraw2(repetitions, learning_algorithms, drift_detectors_params, data_stream)
     #log.info(f'Runnig abrupt_led')
     # run_abrupt_led(repetitions, learning_algorithms, drift_detectors_params, data_stream)
