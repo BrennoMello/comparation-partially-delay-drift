@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+    experiment-service:
+        container_name: ${CONTAINER}
+        image: ${IMAGE}
+        build:
+            context: .
+            dockerfile: Dockerfile
+            args:
+                HOME: ${EAPP}
+        volumes:
+        - '${APP}:${EAPP}'
+        - '${DATA}:${EDATA}'
+        command: python src/experiment.py -f data/datasets/protein_c_deficiency_v2.csv -r "node" "res" "proc_deficiency" -l "proc_deficiency" -s "\t" -le True
