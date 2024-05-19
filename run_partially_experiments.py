@@ -627,9 +627,9 @@ def run_experiment(repetitions):
     learning_algorithms = ["trees.HoeffdingTree"]
     if(repetitions == 30):
         data_stream = [
-                       #{"data_size": 10000, "drift_position":  [2000, 2000, 2000, 2000], "data_partially": [99, 98, 97, 96, 95]},   \
-                       #{"data_size": 20000, "drift_position": [4000, 4000, 4000, 4000], "data_partially": [99, 98, 97, 96, 95]},    \
-                       #{"data_size": 50000, "drift_position": [10000, 10000, 10000, 10000], "data_partially": [99, 98, 97, 96, 95]}, \
+                       {"data_size": 10000, "drift_position":  [2000, 2000, 2000, 2000], "data_partially": [99, 98, 97, 96, 95]},   \
+                       {"data_size": 20000, "drift_position": [4000, 4000, 4000, 4000], "data_partially": [99, 98, 97, 96, 95]},    \
+                       {"data_size": 50000, "drift_position": [10000, 10000, 10000, 10000], "data_partially": [99, 98, 97, 96, 95]}, \
                        {"data_size": 100000, "drift_position":[20000, 20000, 20000, 20000], "data_partially": [99, 98, 97, 96, 95]}
                       ]
     else:
@@ -639,63 +639,63 @@ def run_experiment(repetitions):
                        {"data_size": 2000000, "drift_position": [400000, 400000, 400000, 400000], "data_partially": [99, 98, 97, 96, 95]}    
                       ]    
 
+    #{"id": "FHDDM", "drift_name": "FHDDM", "params": ""},
+    #{"id": "FTDD", "drift_name": "FTDD", "params": ""},
+    #{"id": "WSTD","drift_name": "WSTD", "params": ""},
     drift_detectors_params = [
-                            # {"id": "DDM", "drift_name": "DDM", "params": ""},    \
-                            # {"id": "EDDM", "drift_name": "EDDM", "params": ""},   \
-                            # {"id": "ADWIN", "drift_name": "ADWINChangeDetector", "params": ""},  \
-                            # {"id": "ECDD", "drift_name": "EWMAChartDM", "params": ""},   \
-                            # {"id": "STEPD", "drift_name": "STEPD", "params": ""},  \
-                            # {"id": "SeqDrift2", "drift_name": "SeqDrift2ChangeDetector", "params": ""},  \
-                            # {"id": "SEED", "drift_name": "SEEDChangeDetector", "params": ""},   \
-                            # {"id": "HDDM_A_Test", "drift_name": "HDDM_A_Test", "params": ""},  \
-                            # {"id": "HDDM_W_Test", "drift_name": "HDDM_W_Test", "params": ""},  \
-                            #{"id": "FHDDM", "drift_name": "FHDDM", "params": ""},  \
-                            #{"id": "FTDD", "drift_name": "FTDD", "params": ""},   \
-                            # {"id": "RDDM_30", "drift_name": "RDDM", "params": "-n 30 -w 2 -o 3"}, \
-                            # {"id": "RDDM","drift_name": "RDDM", "params": ""},   \
-                            #{"id": "WSTD","drift_name": "WSTD", "params": ""},    \
-                            # {"id": "HypothesisTestDetectorKs","drift_name": "HypothesisTestDetector", "params": "-h ks"},    \
-                            # {"id": "HypothesisTestDetectorWrs","drift_name": "HypothesisTestDetector", "params": "-h wrs"},    \
-                            # {"id": "HypothesisTestDetectorTt","drift_name": "HypothesisTestDetector", "params": "-h tt"},    \
+                            {"id": "DDM", "drift_name": "DDM", "params": ""},    
+                            {"id": "EDDM", "drift_name": "EDDM", "params": ""},   
+                            {"id": "ADWIN", "drift_name": "ADWINChangeDetector", "params": ""},  
+                            {"id": "ECDD", "drift_name": "EWMAChartDM", "params": ""},   
+                            {"id": "STEPD", "drift_name": "STEPD", "params": ""},  
+                            {"id": "SeqDrift2", "drift_name": "SeqDrift2ChangeDetector", "params": ""},
+                            {"id": "SEED", "drift_name": "SEEDChangeDetector", "params": ""},
+                            {"id": "HDDM_A_Test", "drift_name": "HDDM_A_Test", "params": ""},
+                            {"id": "HDDM_W_Test", "drift_name": "HDDM_W_Test", "params": ""},
+                            {"id": "RDDM_30", "drift_name": "RDDM", "params": "-n 30 -w 2 -o 3"},
+                            {"id": "RDDM","drift_name": "RDDM", "params": ""},
+                            {"id": "HypothesisTestDetectorKs","drift_name": "HypothesisTestDetector", "params": "-h ks"},    \
+                            {"id": "HypothesisTestDetectorWrs","drift_name": "HypothesisTestDetector", "params": "-h wrs"},    \
+                            {"id": "HypothesisTestDetectorTt","drift_name": "HypothesisTestDetector", "params": "-h tt"},    \
                             {"id": "MultivariateDetector","drift_name": "moa.learners.ChangeDetectorEnsembleMultivariateLearner", "params": "-d (PageHinkleyDM -d 0.002) -p 20"},    \
                             {"id": "Studd","drift_name": "moa.learners.StuddLearner", "params": "-b (meta.AdaptiveRandomForest -u  -q -w) -s (meta.AdaptiveRandomForest -u  -q -w) -d (PageHinkleyDM -d 0.002) -w 500"},    \
-                            #{"id": "NoChangeDetector","drift_name": "NoChangeDetectorNaive", "params": "-n 1000"}
+                            {"id": "NoChangeDetector","drift_name": "NoChangeDetectorNaive", "params": "-n 1000"}
                             ]
     
                                                 
-    #log.info(f'Runnig abrupt_agraw1')
-    #run_abrupt_agraw1(repetitions, learning_algorithms, drift_detectors_params, data_stream)
-    #log.info(f'Runnig gradual_agraw1')
-    #run_gradual_agraw1(repetitions, learning_algorithms, drift_detectors_params, data_stream)
-    #log.info(f'Runnig abrupt_agraw2')
-    #run_abrupt_agraw2(repetitions, learning_algorithms, drift_detectors_params, data_stream)
+    log.info('Runnig abrupt_agraw1')
+    run_abrupt_agraw1(repetitions, learning_algorithms, drift_detectors_params, data_stream)
+    log.info('Runnig gradual_agraw1')
+    run_gradual_agraw1(repetitions, learning_algorithms, drift_detectors_params, data_stream)
+    log.info('Runnig abrupt_agraw2')
+    run_abrupt_agraw2(repetitions, learning_algorithms, drift_detectors_params, data_stream)
     log.info('Runnig gradual_agraw2')
     run_gradual_agraw2(repetitions, learning_algorithms, drift_detectors_params, data_stream)
-    #log.info(f'Runnig abrupt_led')
-    # run_abrupt_led(repetitions, learning_algorithms, drift_detectors_params, data_stream)
-    # log.info(f'Runnig gradual_led')
-    # run_gradual_led(repetitions, learning_algorithms, drift_detectors_params, data_stream)
-    # log.info(f'Runnig abrupt_mixed')
-    # run_abrupt_mixed(repetitions, learning_algorithms, drift_detectors_params, data_stream)
-    # log.info(f'Runnig gradual_mixed')
-    # run_gradual_mixed(repetitions, learning_algorithms, drift_detectors_params, data_stream)
-    # log.info(f'Runnig abrupt_randomRBF')
-    # run_abrupt_randomRBF(repetitions, learning_algorithms, drift_detectors_params, data_stream)
-    # log.info(f'Runnig gradual_randomRBF')
-    # run_gradual_randomRBF(repetitions, learning_algorithms, drift_detectors_params, data_stream)
-    # log.info(f'Runnig abrupt_sine')
-    # run_abrupt_sine(repetitions, learning_algorithms, drift_detectors_params, data_stream)
-    # log.info(f'Runnig gradual_sine')
-    # run_gradual_sine(repetitions, learning_algorithms, drift_detectors_params, data_stream)
-    # log.info(f'Runnig abrupt_waveform')
-    # run_abrupt_waveform(repetitions, learning_algorithms, drift_detectors_params, data_stream)
-    # log.info(f'Runnig gradual_waveform')
-    # run_gradual_waveform(repetitions, learning_algorithms, drift_detectors_params, data_stream)
-    # log.info(f'Runnig abrupt_hyperplane')        
+    log.info('Runnig abrupt_led')
+    run_abrupt_led(repetitions, learning_algorithms, drift_detectors_params, data_stream)
+    log.info('Runnig gradual_led')
+    run_gradual_led(repetitions, learning_algorithms, drift_detectors_params, data_stream)
+    log.info('Runnig abrupt_mixed')
+    run_abrupt_mixed(repetitions, learning_algorithms, drift_detectors_params, data_stream)
+    log.info('Runnig gradual_mixed')
+    run_gradual_mixed(repetitions, learning_algorithms, drift_detectors_params, data_stream)
+    log.info('Runnig abrupt_randomRBF')
+    run_abrupt_randomRBF(repetitions, learning_algorithms, drift_detectors_params, data_stream)
+    log.info('Runnig gradual_randomRBF')
+    run_gradual_randomRBF(repetitions, learning_algorithms, drift_detectors_params, data_stream)
+    log.info('Runnig abrupt_sine')
+    run_abrupt_sine(repetitions, learning_algorithms, drift_detectors_params, data_stream)
+    log.info('Runnig gradual_sine')
+    run_gradual_sine(repetitions, learning_algorithms, drift_detectors_params, data_stream)
+    log.info('Runnig abrupt_waveform')
+    run_abrupt_waveform(repetitions, learning_algorithms, drift_detectors_params, data_stream)
+    log.info('Runnig gradual_waveform')
+    run_gradual_waveform(repetitions, learning_algorithms, drift_detectors_params, data_stream)
+    log.info('Runnig abrupt_hyperplane')        
 
 if __name__ == "__main__":
     
     run_experiment(repetitions=30)
-    #run_experiment(repetitions=10)
+    run_experiment(repetitions=10)
     
    

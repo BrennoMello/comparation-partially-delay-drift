@@ -12,4 +12,4 @@ services:
         volumes:
         - '${APP}:${EAPP}'
         - '${DATA}:${EDATA}'
-        command: python src/experiment.py -f data/datasets/protein_c_deficiency_v2.csv -r "node" "res" "proc_deficiency" -l "proc_deficiency" -s "\t" -le True
+        command: python run_partially_experiments.py
