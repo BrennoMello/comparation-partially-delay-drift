@@ -165,17 +165,29 @@ def get_data_stream(repetitions, learning_algorithms, drift_detectors_params, da
 
 def run_cd_delay_prequential():
     print("START CD EVALUATION PREQUENTIAL DELAY DATA STREAM")
-    
-    
-    ht_classifier = HoeffdingTree(schema=stream_sea2drift.get_schema())
+    stream_abrupt_agraw1 = DriftStream(
+        stream=[
+            AgrawalGenerator(classification_function=1),
+            AbruptDrift(position=20000),
+            AgrawalGenerator(classification_function=2),
+            AbruptDrift(position=40000),
+            AgrawalGenerator(classification_function=3),
+            AbruptDrift(position=60000),
+            AgrawalGenerator(classification_function=4),
+            AbruptDrift(position=80000),
+            AgrawalGenerator(classification_function=5),
+        ]
+    )
+
+    ht_classifier = HoeffdingTree(schema=stream_abrupt_agraw1.get_schema())
     cd_classifier = ConceptDriftMethodClassifier(
-        schema=stream_sea2drift.get_schema(),
+        schema=stream_abrupt_agraw1.get_schema(),
         drift_detector=ABCD(),
         learner=ht_classifier,
     )
 
     results = prequential_cd_delay_evaluation(
-        stream=stream_sea2drift,
+        stream=stream_abrupt_agraw1,
         learner=cd_classifier,
         max_instances=100000,
         delay_length=10000,
