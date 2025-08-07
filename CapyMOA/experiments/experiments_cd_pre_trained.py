@@ -182,7 +182,7 @@ def run_cd_delay_prequential():
     ht_classifier = HoeffdingTree(schema=stream_abrupt_agraw1.get_schema())
     cd_classifier = ConceptDriftMethodClassifier(
         schema=stream_abrupt_agraw1.get_schema(),
-        drift_detector=ABCD(),
+        drift_detector=Hang(),
         learner=ht_classifier,
     )
 
